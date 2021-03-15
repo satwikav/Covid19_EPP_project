@@ -192,7 +192,8 @@ latex_documents = [
     (
         "index",
         "project_documentation.tex",
-        """Documentation of the Visualisations on Covid-19 Contact Restriction Policies project""",
+        """Documentation of the Visualisations on Covid-19 Contact Restriction
+        Policies project""",
         "Emily Anne Schwab, Satwika Vysetty",
         "manual",
     )
