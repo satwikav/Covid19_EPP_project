@@ -9,7 +9,6 @@ from plotly.subplots import make_subplots
 
 from src.config import BLD
 
-sns.set(font_scale=1.5, style="white")
 
 mobility = [
     "workplaces_percent_change_from_baseline",
@@ -33,7 +32,7 @@ titles_2 = [
 ]
 titles_3 = ["New Covid-19 Cases", "New Covid-19 Deaths"]
 corona = ["new_cases_smoothed", "new_deaths_smoothed"]
-colours = ["blue", "green", "yellow", "maroon", "navy"]
+colours = ["#547482", "#C87259", "#F1B05D", "#7A8C87", "#C8B05C"]
 axes = [dict(range=[0, 30000]), dict(range=[0, 950])]
 
 
@@ -46,11 +45,13 @@ def plot_visual_1(df, i, path):
         width=1000,
         height=600,
         template="simple_white",
+        color_discrete_sequence=[colours[i]],
     )
     fig.update_layout(
         xaxis_title="Date",
         yaxis_title="%s Stringency Index" % titles_1[i],
-        font=dict(size=20),
+        title_x=0.5,
+        title_font=dict(size=20),
     )
     fig.write_image(str(pathlib.Path(path)), format="png")
 
@@ -71,17 +72,19 @@ def plot_visual_2(df, path):
         xaxis_title="Date",
         yaxis_title="Aggregate Stringency Index",
         legend_title="Aggregate Stringency Index",
-        font=dict(size=15),
+        title_x=0.5,
+        title_font=dict(size=20),
     )
     fig.write_image(str(pathlib.Path(path)), format="png")
 
 
 def plot_visual_3(df, path):
+    sns.set(font_scale=1.65, style="white")
     count = 1
-    plt.subplots(sharex=True, figsize=(30, 30))
+    plt.subplots(figsize=(40, 30))
     plt.suptitle(
         "Deviation in Mobility from Baseline According to Level of Contact Stringency",
-        size=40,
+        size=50,
     )
     for i in scores:
         for t in mobility:
@@ -99,15 +102,17 @@ def plot_visual_4(df, i, path):
         title="Comparison of %s Mobility Trend with Aggregate Stringency Index over Time"
         % titles_2[i],
         width=1200,
-        height=700,
-        color_discrete_sequence=[colours[i], "red"],
+        height=600,
+        color_discrete_sequence=[colours[i], "#3C2030"],
         template="simple_white",
     )
     fig.update_layout(
         xaxis_title="Date",
         yaxis_title="Baseline Change for %s Mobility, in %%" % titles_2[i],
-        legend_title="Legend",
-        font=dict(size=15),
+        legend_title="Legend:",
+        legend=dict(y=0.75, x=1),
+        title_x=0.5,
+        title_font=dict(size=20),
     )
     fig.write_image(str(pathlib.Path(path)), format="png")
 
@@ -119,14 +124,16 @@ def plot_visual_5(df, path):
         y=education,
         title="Changes in Mobility vs. School Stringency Index over Time",
         width=1200,
-        height=500,
-        color_discrete_sequence=px.colors.qualitative.Set2,
+        height=600,
+        color_discrete_sequence=px.colors.qualitative.Antique,
     )
     fig.update_layout(
         xaxis_title="Date",
         yaxis_title="Baseline Changes for Various Mobility Types, in %",
-        legend_title="Legend",
-        font=dict(size=15),
+        legend_title="Legend:",
+        title_x=0.5,
+        title_font=dict(size=20),
+        legend=dict(y=0.85, x=1),
         template="simple_white",
     )
     fig.write_image(str(pathlib.Path(path)), format="png")
@@ -137,20 +144,20 @@ def plot_visual_6(df, i, path):
     fig = px.bar(
         df, x="date", y="stringency_index_score", color="stringency_index_score"
     )
-    figi = px.line(df, x="date", y=corona[i])
+    figi = px.line(df, x="date", y=corona[i], color_discrete_sequence=[colours[i]])
     figi.update_traces(yaxis="y2")
     subfig.add_traces(fig.data + figi.data)
     subfig.update_layout(
         width=1200,
         height=600,
         title="Comparing %s with Aggregate Stringency Index over Time" % titles_3[i],
-        font=dict(size=17),
+        title_x=0.5,
+        title_font=dict(size=20),
     )
     subfig.update_layout(yaxis=dict(range=[0, 100]), yaxis2=axes[i])
     subfig.layout.xaxis.title = "Date"
     subfig.layout.yaxis.title = "Aggregate Stringency Index"
     subfig.layout.yaxis2.title = "%s" % titles_3[i]
-    subfig.layout.legend.title = "Legend"
     subfig.layout.template = "simple_white"
     subfig.write_image(str(pathlib.Path(path)), format="png")
 
