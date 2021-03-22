@@ -17,31 +17,23 @@ mobility = [
     "residential_percent_change_from_baseline",
     "retail_and_recreation_percent_change_from_baseline",
 ]
+baselines = mobility[:]
+baselines.extend(["grocery_and_pharmacy_percent_change_from_baseline"])
+education = mobility[:]
+del education[3]
+education.extend(["E_index_score"])
 scores = ["E_index_score", "R_index_score", "S_index_score"]
 titles_1 = ["Schools", "Private Gatherings", "Public Activities"]
-education = [
-    "E_index_score",
-    "workplaces_percent_change_from_baseline",
-    "transit_stations_percent_change_from_baseline",
-    "residential_percent_change_from_baseline",
-]
-baselines = [
-    "retail_and_recreation_percent_change_from_baseline",
-    "grocery_and_pharmacy_percent_change_from_baseline",
-    "transit_stations_percent_change_from_baseline",
-    "workplaces_percent_change_from_baseline",
-    "residential_percent_change_from_baseline",
-]
 titles_2 = [
+    "Workplaces",
+    "Transit Stations",
+    "Residential",
     "Retail and Recreation",
     "Grocery and Pharmacy",
-    "Transit Stations",
-    "Workplaces",
-    "Residential",
 ]
-colours = ["blue", "green", "yellow", "maroon", "navy"]
-cols = ["new_cases_smoothed", "new_deaths_smoothed"]
 titles_3 = ["New Covid-19 Cases", "New Covid-19 Deaths"]
+corona = ["new_cases_smoothed", "new_deaths_smoothed"]
+colours = ["blue", "green", "yellow", "maroon", "navy"]
 axes = [dict(range=[0, 30000]), dict(range=[0, 950])]
 
 
@@ -145,7 +137,7 @@ def plot_visual_6(df, i, path):
     fig = px.bar(
         df, x="date", y="stringency_index_score", color="stringency_index_score"
     )
-    figi = px.line(df, x="date", y=cols[i])
+    figi = px.line(df, x="date", y=corona[i])
     figi.update_traces(yaxis="y2")
     subfig.add_traces(fig.data + figi.data)
     subfig.update_layout(
@@ -168,39 +160,39 @@ def plot_visual_6(df, i, path):
     [
         (
             {
-                "visual_1_0": BLD / "figures" / "Stringency_index_for_Schools.png",
+                "visual_1_0": BLD / "figures" / "Stringency_Index_for_Schools.png",
                 "visual_1_1": BLD
                 / "figures"
-                / "Stringency_index_for_Private_Gatherings.png",
+                / "Stringency_Index_for_Private_Gatherings.png",
                 "visual_1_2": BLD
                 / "figures"
-                / "Stringency_index_for_Public_Activities.png",
-                "visual_2": BLD / "figures" / "Stringency_index_over_time.png",
-                "visual_3": BLD / "figures" / "Mobility_vs_sub_score_indices.png",
+                / "Stringency_Index_for_Public_Activities.png",
+                "visual_2": BLD / "figures" / "Stringency_Index_over_time.png",
+                "visual_3": BLD / "figures" / "Mobility_vs_Sub_Score_indices.png",
                 "visual_4_0": BLD
                 / "figures"
-                / "Retail&Recreation_mobility_vs_stringency_index.png",
+                / "Retail_Recreation_mobility_vs_Stringency_Index.png",
                 "visual_4_1": BLD
                 / "figures"
-                / "Grocery&Pharmacy_mobility_vs_stringency_index.png",
+                / "Grocery_Pharmacy_mobility_vs_Stringency_Index.png",
                 "visual_4_2": BLD
                 / "figures"
-                / "TransitStations_mobility_vs_stringency_index.png",
+                / "Transit_Stations_mobility_vs_Stringency_Index.png",
                 "visual_4_3": BLD
                 / "figures"
-                / "Workplaces_mobility_vs_stringency_index.png",
+                / "Workplaces_mobility_vs_Stringency_Index.png",
                 "visual_4_4": BLD
                 / "figures"
-                / "Residential_mobility_vs_stringency_index.png",
+                / "Residential_mobility_vs_Stringency_Index.png",
                 "visual_5": BLD
                 / "figures"
-                / "Mobility_vs_education_sub_score_index.png",
+                / "Mobility_vs_Education_Sub_Score_Index.png",
                 "visual_6_0": BLD
                 / "figures"
-                / "Covid-19_Cases_vs_stringency_index.png",
+                / "Covid-19_Cases_vs_Stringency_Index.png",
                 "visual_6_1": BLD
                 / "figures"
-                / "Covid-19_Deaths_vs_stringency_index.png",
+                / "Covid-19_Deaths_vs_Stringency_Index.png",
             },
             BLD / "data" / "df_visuals.csv",
         )
