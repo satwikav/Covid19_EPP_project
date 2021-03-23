@@ -15,7 +15,7 @@ del wide_cols[0:2]
 
 
 def create_data(df, path):
-    """Cleans policy data.
+    """Clean policy data.
 
     This function cleans and manages data to create 'covid_policy' data frame.
 
