@@ -66,7 +66,8 @@ def create_index(
 
     Args:
         df (data frame)         : Cleaned data in .csv format that is used for further analysis.
-        sub_index_scores (str)  : Stringency Index for each of the policies in consideration.
+        sub_index_scores (str)  : Names given to the stringency index for each of the
+                                  policies in consideration.
         ordinal_values (int)    : Ordinal scale measurement that represents
                                   level of policy stringency.
         flag_dummies (int)      : Dummy variable indicating whether or not an indicator
@@ -75,8 +76,8 @@ def create_index(
         recorded_flags (int)    : Dummy variable indicating whether the policy is implemented
                                   regionally or federally.
         maxima (int)            : Maximum ordinal scale value each indicator can take.
-        stringency_indices (str): Average for each kind of Sub Index Score and the
-                                  overall average to get aggregate Stringency Index.
+        stringency_indices (str): Names given to the average for each of the Sub Index Score
+                                  and the overall average.
         subscores (int)         : Stringency Index for each of the policies in
                                   consideration to calculate their averages.
         path                    : Path under which resulting 'stringency_index_data'
