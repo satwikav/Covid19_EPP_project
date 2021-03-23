@@ -1,3 +1,4 @@
+"""Creates plots that do not require looping"""
 import pathlib
 
 import matplotlib.pyplot as plt
@@ -20,7 +21,19 @@ del education[3]
 education.extend(["E_index_score"])
 
 
-def create_visual_2(df):
+def create_visual_SI_time(df):
+    """Create plot of Stringency Index (SI) over time.
+
+    This function generates plot for Stringency Index and
+    shows where it stands at a given point in time.
+
+    Args:
+        df (data frame): Data prepared for creating plots in .csv format.
+
+    Returns:
+        fig: Plot showing the change in Stringency Index over time.
+
+    """
     fig = px.bar(
         df,
         x="date",
@@ -42,7 +55,22 @@ def create_visual_2(df):
     return fig
 
 
-def create_visual_3(df):
+def create_visual_SSI_Mobility(df):
+    """Creates plots of Sub Score Indicies(SSI) vs Mobility Data.
+
+    This function generates plots with four of the
+    mobility variables versus the three Sub Score Indicies.
+    Each subplot shows one of the mobility related
+    variable versus one of the Sub Score Index.
+
+    Args:
+        df (data frame): Data prepared for creating plots in .csv format.
+
+    Returns:
+        fig: Plots showing the change in Sub Score Index as
+             the mobility variable changes.
+
+    """
     sns.set(font_scale=1.65, style="white")
     count = 1
     plt.subplots(figsize=(40, 30))
@@ -58,7 +86,21 @@ def create_visual_3(df):
     return plt
 
 
-def create_visual_5(df):
+def create_visual_ESSI_Mobility(df):
+    """Create plots of Education Sub Score Index(ESSI) and Mobility Data over time.
+
+    This function generates plot for three of the five mobility
+    variables and the Education Sub Score Index. It shows the respective
+    mobility related variable and Education Sub Score Index at a given point in time.
+
+    Args:
+        df (data frame): Data prepared for creating plots in .csv format.
+
+    Returns:
+        fig: Plots showing the change in Education Sub Score Index and
+             mobility variables over time.
+
+    """
     fig = px.line(
         df,
         x="date",
@@ -85,16 +127,18 @@ def create_visual_5(df):
 )
 @pytask.mark.produces(
     {
-        "visual_2": BLD / "figures" / "Stringency_Index_over_time.png",
-        "visual_3": BLD / "figures" / "Mobility_vs_Sub_Score_indices.png",
-        "visual_5": BLD / "figures" / "Mobility_vs_Education_Sub_Score_Index.png",
+        "visual_SI_time": BLD / "figures" / "Stringency_Index_over_time.png",
+        "visual_SSI_Mobility": BLD / "figures" / "Mobility_vs_Sub_Score_indices.png",
+        "visual_ESSI_Mobility": BLD
+        / "figures"
+        / "Mobility_vs_Education_Sub_Score_Index.png",
     }
 )
 def task_create_visuals(depends_on, produces):
     data = pd.read_csv(depends_on)
-    fig2 = create_visual_2(data)
-    fig2.write_image(str(pathlib.Path(produces["visual_2"])), format="png")
-    fig3 = create_visual_3(data)
-    fig3.savefig(produces["visual_3"])
-    fig5 = create_visual_5(data)
-    fig5.write_image(str(pathlib.Path(produces["visual_5"])), format="png")
+    fig = create_visual_SI_time(data)
+    fig.write_image(str(pathlib.Path(produces["visual_SI_time"])), format="png")
+    fig1 = create_visual_SSI_Mobility(data)
+    fig1.savefig(produces["visual_SSI_Mobility"])
+    fig2 = create_visual_ESSI_Mobility(data)
+    fig2.write_image(str(pathlib.Path(produces["visual_ESSI_Mobility"])), format="png")
