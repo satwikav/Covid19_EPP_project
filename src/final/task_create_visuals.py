@@ -24,8 +24,8 @@ education.extend(["E_index_score"])
 def create_visual_SI_time(df):
     """Create plot of Stringency Index (SI) over time.
 
-    This function generates plot for Stringency Index and
-    shows where it stands at a given point in time.
+    This function generates plot for magnitude of
+    Stringency Index over time.
 
     Args:
         df (data frame): Data prepared for creating plots in .csv format.
@@ -56,7 +56,7 @@ def create_visual_SI_time(df):
 
 
 def create_visual_SSI_Mobility(df):
-    """Creates plots of Sub Score Indicies(SSI) vs Mobility Data.
+    """Create plots of Sub Score Indicies (SSI) vs Mobility Data.
 
     This function generates plots with four of the
     mobility variables versus the three Sub Score Indicies.
@@ -87,7 +87,7 @@ def create_visual_SSI_Mobility(df):
 
 
 def create_visual_ESSI_Mobility(df):
-    """Create plots of Education Sub Score Index(ESSI) and Mobility Data over time.
+    """Create plots of Education Sub Score Index (ESSI) and Mobility Data over time.
 
     This function generates plot for three of the five mobility
     variables and the Education Sub Score Index. It shows the respective
