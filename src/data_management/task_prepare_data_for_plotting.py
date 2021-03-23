@@ -21,7 +21,22 @@ mobility_data_cols = [
 corona_data_cols = ["new_cases_smoothed", "new_deaths_smoothed"]
 
 
-def create_visualisation_data(stringency_data, mobility_data, corona_data, path):
+def prepare_data_for_plotting(stringency_data, mobility_data, corona_data, path):
+    """Prepare data for visualisations.
+
+    Select parts of different datasets and concat them to create 'df_visuals' data frame.
+
+    Args:
+        stringency_data (data frame): Cleaned data with Stringency indicies in .csv format.
+        mobility_data (data frame)  : Google Mobility data for Germany in .csv format.
+        corona_data (data frame)    : Data on Covid related cases and deaths in .csv format.
+        path                        : Path under which resulting 'df_visuals'
+                                      data frame is to be saved.
+
+    Returns:
+        data frame: df_visuals.csv is used for creating visualisations.
+
+    """
     # Select data from 15.2.2020 until 26.1.2021 in stringency index data
     stringency_data = stringency_data.iloc[14:361]
     stringency_data = stringency_data[stringency_data_cols]
@@ -54,8 +69,8 @@ def create_visualisation_data(stringency_data, mobility_data, corona_data, path)
         )
     ],
 )
-def task_create_visualisation_data(depends_on, produces):
+def task_prepare_data_for_plotting(depends_on, produces):
     stringency_data = pd.read_csv(depends_on["stringency_data"])
     mobility_data = pd.read_csv(depends_on["mobility_data"])
     corona_data = pd.read_csv(depends_on["corona_data"])
-    create_visualisation_data(stringency_data, mobility_data, corona_data, produces)
+    prepare_data_for_plotting(stringency_data, mobility_data, corona_data, produces)
