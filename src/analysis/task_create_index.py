@@ -58,7 +58,7 @@ def create_index(
     subscores,
     path,
 ):
-    """Calculates Sub Score Indicies and Stringency Index from the data.
+    """Calculate Sub Score Indicies and Stringency Index from the data.
 
     This function first calculates stringency level within each policy category
     using the 'calculate_sub_index_score' function. Then it takes their averages
