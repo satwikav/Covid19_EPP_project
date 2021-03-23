@@ -18,31 +18,31 @@ stringency_indices = ["E_index_score", "S_index_score", "stringency_index_score"
 subscores = [sub_index_scores[0:4], sub_index_scores[5:9], sub_index_scores]
 
 
-def calculate_sub_index_score(df, policy_value, flag, recorded_flag, maximum):
-    """Sub Score Indicies.
+def calculate_sub_index_score(df, ordinal_value, flag_dummy, recorded_flag, maximum):
+    """Calculates Sub Score Indicies.
 
-    This function calculates stringency level for each policy category.
+    This function calculates stringency level for each
 
     Args:
-        df (df): Dataframe
-        policy_value (int): Ordinal scale measurement that represents level of policy
-                            stringency.
-        flag (int): Dummy variable indicating whether or not an indicator
-                    uses a flag to distinguish between regionally and federally
-                    employed policies.
+        df (data frame)    : Cleaned data in .csv format that is used for further analysis.
+        ordinal_value (int): Ordinal scale measurement that represents
+                             level of policy stringency.
+        flag_dummy (int)   : Dummy variable indicating whether or not an indicator
+                             uses a flag to distinguish between regionally and
+                             federally employed policies.
         recorded_flag (int): Dummy variable indicating whether the policy is implemented
                              regionally or federally.
-        maximum (int): Maximum ordinal scale value each indicator can take.
+        maximum (int)      : Maximum ordinal scale value each indicator can take.
 
     Note:
         For more detailed descriptions of args, see code book.
 
     Returns:
         int: A value between 0 and 100 with 0 indicating no policy restriction in place
-        and 100 indicating the highest level of stringency a policy can take on.
+             and 100 indicating the highest level of stringency a policy can take on.
 
     """
-    numerator = df[policy_value] - 0.5 * (df[flag] - df[recorded_flag])
+    numerator = df[ordinal_value] - 0.5 * (df[flag_dummy] - df[recorded_flag])
     denominator = df[maximum]
     return 100 * (numerator / denominator)
 
@@ -58,17 +58,36 @@ def create_index(
     subscores,
     path,
 ):
-    """.
+    """Calculates Sub Score Indicies and Stringency Index from the data.
 
-    This function calculates.
+    This function first calculates stringency level within each policy category
+    using the 'calculate_sub_index_score' function. Then it takes their averages
+    to give stringency indicies for each containment policy as well as the aggregate.
 
     Args:
+        df (data frame)         : Cleaned data in .csv format that is used for further analysis.
+        sub_index_scores (str)  : Stringency Index for each of the policies in consideration.
+        ordinal_values (int)    : Ordinal scale measurement that represents
+                                  level of policy stringency.
+        flag_dummies (int)      : Dummy variable indicating whether or not an indicator
+                                  uses a flag to distinguish between regionally and federally
+                                  employed policies.
+        recorded_flags (int)    : Dummy variable indicating whether the policy is implemented
+                                  regionally or federally.
+        maxima (int)            : Maximum ordinal scale value each indicator can take.
+        stringency_indices (str): Average Stringency within each kind of Sub Index Score
+                                  and the overall average for aggregate
+                                  Stringency Index
+        subscores (int)         : Stringency Index for each of the policies in
+                                  consideration to calculate their averages.
+        path                    : Path under which resulting covid_policy data frame
+                                  is to be saved.
 
-
-
+     Note:
+        For more detailed descriptions of args, see code book.
 
     Returns:
-
+        data frame: stringency_index_data.csv is used for visualizations.
 
     """
     for sub_index_score, ordinal_value, flag_dummy, recorded_flag, maximum in zip(
