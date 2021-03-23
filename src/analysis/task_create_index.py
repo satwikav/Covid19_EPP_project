@@ -79,14 +79,14 @@ def create_index(
                                   overall average to get aggregate Stringency Index.
         subscores (int)         : Stringency Index for each of the policies in
                                   consideration to calculate their averages.
-        path                    : Path under which resulting covid_policy data frame
-                                  is to be saved.
+        path                    : Path under which resulting 'stringency_index_data'
+                                  data frame is to be saved.
 
      Note:
         For more detailed descriptions of args, see code book.
 
     Returns:
-        data frame: stringency_index_data.csv is used for visualizations.
+        data frame: stringency_index_data.csv is used in preparing data for visualizations.
 
     """
     for sub_index_score, ordinal_value, flag_dummy, recorded_flag, maximum in zip(
