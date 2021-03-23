@@ -24,7 +24,8 @@ corona_data_cols = ["new_cases_smoothed", "new_deaths_smoothed"]
 def prepare_data_for_plotting(stringency_data, mobility_data, corona_data, path):
     """Prepare data for visualisations.
 
-    Select parts of different datasets and concat them to create 'df_visuals' data frame.
+    This function selects parts of different datasets and concats them to
+    create 'df_visuals' data frame.
 
     Args:
         stringency_data (data frame): Cleaned data with Stringency indicies in .csv format.
