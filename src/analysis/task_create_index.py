@@ -21,7 +21,7 @@ subscores = [sub_index_scores[0:4], sub_index_scores[5:9], sub_index_scores]
 def calculate_sub_index_score(df, ordinal_value, flag_dummy, recorded_flag, maximum):
     """Calculates Sub Score Indicies.
 
-    This function calculates stringency level for each
+    This function calculates stringency level for each policy category.
 
     Args:
         df (data frame)    : Cleaned data in .csv format that is used for further analysis.
@@ -75,9 +75,8 @@ def create_index(
         recorded_flags (int)    : Dummy variable indicating whether the policy is implemented
                                   regionally or federally.
         maxima (int)            : Maximum ordinal scale value each indicator can take.
-        stringency_indices (str): Average Stringency within each kind of Sub Index Score
-                                  and the overall average for aggregate
-                                  Stringency Index
+        stringency_indices (str): Average for each kind of Sub Index Score and the
+                                  overall average to get aggregate Stringency Index.
         subscores (int)         : Stringency Index for each of the policies in
                                   consideration to calculate their averages.
         path                    : Path under which resulting covid_policy data frame
