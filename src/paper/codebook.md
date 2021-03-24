@@ -51,3 +51,41 @@ All the 9 indicators are recorded on an ordinal scale according to the level of 
 | R1 | `R_index_score` | Record contact restrictions | Ordinal scale | 0 - no measures<br/>1 - contact reduced to <= 1000<br/>2 - contact reduced to <= 10 or 2 HH<br/>3 - contact reduced to 2 HH<br/>4 - contact reduced to gatherings of individuals from two hhs (total number of individuals may not exceed 10 individuals)<br/>5 - contact reduced to gatherings of individuals from two hhs (total number of individuals may not exceed 5 individuals)<br/>6 - contact reduced to <=4<br/>7 - contact limited to the members of one's HH and maximum of one individual from a different HH<br/>8 - contact reduced to the members of one's hh or maximum one individual from a different HH<br/>-100 - no data |
 | | `flag_R1` | | Binary flag for geographic scope | 0 - targeted<br/>1 - general<br/>-100 - no data |
 | | `recorded_flag_R1` | | Binary flag for policy implementation | 0 - state level<br/>1 - national level<br/>-100 - no data |
+
+---
+### Calculating Indicies
+
+First we calculate the *Sub Score Index for each of the 9 indicators*. Then we calculate Sub Score Index for the broader categories and the aggregate Stringency Index.
+
+| Indicator | Max. value | Flag |
+| --- | --- | --- |
+| E1 | 2(0,1,2) | yes=1 |
+| E2 | 3(0,1,2,3) | yes=1 |
+| E3 | 3(0,1,2,3) | yes=1 |
+| E4 | 3(0,1,2,3) | yes=1 |
+| S1 | 3(0,1,2,3) | yes=1 |
+| S2 | 2(0,1,2) | yes=1 |
+| S3 | 2(0,1,2) | yes=1 |
+| S4 | 2(0,1,2) | yes=1 |
+| R1 | 8(0,1,2,3,4,5,6,7,8) | yes=1 |
+
+The Sub Score Index(_I_) for each indicator (_j_) and for each day (_t_), is calculated by the following formula: 
+
+\begin{equation}\label{eq:Eq1}
+  I_{j,t} = 100\frac{v_{j,t} - 0.5\left(F_j - f_{j,t}\right)}{N_j}
+\end{equation}
+
+where,
+- _N<sub>j</sub>_ is the maximum value of the indicator
+- _F<sub>j</sub>_ is the flag value of the indicator
+- _v<sub>j,t</sub>_ is the policy value on the ordinal scale
+- _f<sub>j,t</sub>_ is the recorded flag value of the indicator
+
+A simple average of indicators under each of the catergories would give *Sub Score Index for the respective category* and an average of all the indicators would give the **Stringency Index**. 
+
+| Index name | _k_ | E1 | E2 | E3 | E4 | S1 | S2 | S3 | S4 | R1 |
+| --- | ---: | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `E_Index_Score` | 4 | `x` | `x` | `x` | `x` | |  |  |  |  |
+| `S_Index_Score` | 4 |  |  |  |  | `x` | `x` | `x` | `x` | |
+| `R_Index_Score` | 1 |  |  | |  |  |  |  |  | `x` | 
+| `stringency_index_score`| 9 | `x` | `x` | `x` | `x` | `x` | `x` | `x`| `x`|  `x` |
