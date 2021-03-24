@@ -11,7 +11,7 @@ All the 9 indicators are recorded on an ordinal scale according to the level of 
 ### Containment policies for schools
 
 | ID | Name | Description | Measurement | Coding |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: | :---: |
 | E1 | `SI_E1` | Record closings of kitas | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions)<br/>2 - closed<br/>-100 - no data |
 | | `flag_E1` | | Binary flag for geographic scope | 0 - targeted<br/>1 - general<br/>-100 - no data |
 | | `recorded_flag_E1` | | Binary flag for policy implementation | 0 - state level<br/>1 - national level<br/>-100 - no data |
@@ -29,7 +29,7 @@ All the 9 indicators are recorded on an ordinal scale according to the level of 
 ### Containment policies for public activities
 
 | ID | Name | Description | Measurement | Coding |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: | :---: |
 | S1 | `SI_S1` | Record restrictions on stores | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions)<br/>2 - partially closed (>=800m2<br/>3 - closed<br/>-100 - no data |
 | | `flag_S1` | | Binary flag for geographic scope | 0 - targeted<br/>1 - general<br/>-100 - no data |
 | | `recorded_flag_E1` | | Binary flag for policy implementation | 0 - state level<br/>1 - national level<br/>-100 - no data |
@@ -47,7 +47,7 @@ All the 9 indicators are recorded on an ordinal scale according to the level of 
 ### Containment policies for private gatherings
 
 | ID | Name | Description | Measurement | Coding |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: | :---: |
 | R1 | `R_index_score` | Record contact restrictions | Ordinal scale | 0 - no measures<br/>1 - contact reduced to <= 1000<br/>2 - contact reduced to <= 10 or 2 HH<br/>3 - contact reduced to 2 HH<br/>4 - contact reduced to gatherings of individuals from two hhs (total number of individuals may not exceed 10 individuals)<br/>5 - contact reduced to gatherings of individuals from two hhs (total number of individuals may not exceed 5 individuals)<br/>6 - contact reduced to <=4<br/>7 - contact limited to the members of one's HH and maximum of one individual from a different HH<br/>8 - contact reduced to the members of one's hh or maximum one individual from a different HH<br/>-100 - no data |
 | | `flag_R1` | | Binary flag for geographic scope | 0 - targeted<br/>1 - general<br/>-100 - no data |
 | | `recorded_flag_R1` | | Binary flag for policy implementation | 0 - state level<br/>1 - national level<br/>-100 - no data |
@@ -58,7 +58,7 @@ All the 9 indicators are recorded on an ordinal scale according to the level of 
 First we calculate the *Sub Score Index for each of the 9 indicators*. Then we calculate Sub Score Index for the broader categories and the aggregate Stringency Index.
 
 | Indicator | Max. value | Flag |
-| --- | --- | --- |
+| :---: | :---: | :---: |
 | E1 | 2(0,1,2) | yes=1 |
 | E2 | 3(0,1,2,3) | yes=1 |
 | E3 | 3(0,1,2,3) | yes=1 |
@@ -84,7 +84,7 @@ where,
 A simple average of indicators under each of the catergories would give *Sub Score Index for the respective category* and an average of all the indicators would give the **Stringency Index**. 
 
 | Index name | _k_ | E1 | E2 | E3 | E4 | S1 | S2 | S3 | S4 | R1 |
-| --- | ---: | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: | :---: | :---: |:---: | :---: | :---: | :---: | :---: |
 | `E_Index_Score` | 4 | `x` | `x` | `x` | `x` | |  |  |  |  |
 | `S_Index_Score` | 4 |  |  |  |  | `x` | `x` | `x` | `x` | |
 | `R_Index_Score` | 1 |  |  | |  |  |  |  |  | `x` | 
