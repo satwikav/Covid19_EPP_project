@@ -23,13 +23,14 @@ $ pytask
 ```
 
 ## Main tasks
-1. Clean and manage the Covid-19 restriction policy data <br />
+1. Collection of Covid-19 restriction policy data 
+2. Clean and manage the Covid-19 restriction policy data <br />
 **Dependency:** `policy_data.csv` **Product:** `covid_policy.csv`
-2. Create Sub-Score indicies and Stringency Index <br />
+3. Create Sub-Score indicies and Stringency Index <br />
 **Dependency:** `covid_policy.csv` **Product:** `stringency_index_data.csv`
-3. Prepare data for visualizations <br />
+4. Prepare data for visualizations <br />
 **Dependency:** `stringency_index_data.csv`,`death_data.csv`,`DE_Mobility_Report.csv` **Product:** `df_visuals.csv`
-4. Create visualizations <br />
+5. Create visualizations <br />
 **Dependency:** `df_visuals.csv` **Product:** 13 images in .png format
 6. Create detailed documentation on data collection and index creation <br />
 
