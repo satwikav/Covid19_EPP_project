@@ -25,11 +25,30 @@ $ pytask
 ## Main tasks
 1. Clean and manage the Covid-19 restriction policy data <br />
 **Dependency:** `policy_data.csv` **Product:** `covid_policy.csv`
+2. Create Sub-Score indicies and Stringency Index <br />
+**Dependency:** `covid_policy.csv` **Product:** `stringency_index_data.csv`
+3. Prepare data for Visualizations <br />
+**Dependency:** `stringency_index_data.csv`,`death_data.csv`,`DE_Mobility_Report.csv` **Product:** `df_visuals.csv`
+4. Create visualizations <br />
+5. Create detailed documentation on data collection and index creation <br />
 
 ## Project paths
-hello
-
-<p align="justify">
-
-</p>
-
+The [src](https://github.com/s6emschw/EPP-Final-Project/tree/master/src) directory has the subdirectories:
+- [original_data](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/original_data):
+   - policy_data.csv
+   - death_data.csv
+   - DE_Mobility_Report.csv
+- [data_management](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/data_management):
+   - task_create_data.py
+   - task_prepare_data_for_plotting.py
+- [analysis](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/analysis):
+   - task_create_index.py
+- [final](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/final)
+   - task_create_visual_SI_Covid.py
+   - task_create_visual_SI_Mobility.py
+   - task_create_visual_SSI_time.py
+   - task_create_visuals.py
+- [sandbox](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/sandbox)
+   - covid_stringency_index_visualisations.ipynb
+- [paper](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/paper)
+- [documentation](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/documentation)
