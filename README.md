@@ -51,7 +51,10 @@ The [**src**](https://github.com/s6emschw/EPP-Final-Project/tree/master/src) dir
    - policy_data.csv
    - death_data.csv
    - DE_Mobility_Report.csv
-- [paper](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/paper)
+- [paper](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/paper):
+   - research_paper.tex
+   - task_paper.py
+   - codebook.md
 - [sandbox](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/sandbox):
    - covid_stringency_index_visualisations.ipynb
 
@@ -60,4 +63,4 @@ The **bld** directory which is generated after running Pytask has the subdirecto
 - data: contains `covid_policy.csv`,`df_visuals.csv`
 - documentation: 
 - figures: contains visualizations 
-- paper:
+- paper: 
