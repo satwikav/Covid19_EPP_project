@@ -64,3 +64,6 @@ The **bld** directory which is generated after running Pytask has the subdirecto
 - documentation: 
 - figures: contains visualizations 
 - paper: 
+
+---
+<a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
