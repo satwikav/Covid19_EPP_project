@@ -36,27 +36,28 @@ $ pytask
 
 ## Project paths
 The [**src**](https://github.com/s6emschw/EPP-Final-Project/tree/master/src) directory has the subdirectories:
-- [original_data](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/original_data):
-   - policy_data.csv
-   - death_data.csv
-   - DE_Mobility_Report.csv
+- [analysis](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/analysis):
+   - task_create_index.py
 - [data_management](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/data_management):
    - task_create_data.py
    - task_prepare_data_for_plotting.py
-- [analysis](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/analysis):
-   - task_create_index.py
+- [documentation](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/documentation)
 - [final](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/final):
    - task_create_visual_SI_Covid.py
    - task_create_visual_SI_Mobility.py
    - task_create_visual_SSI_time.py
    - task_create_visuals.py
+- [original_data](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/original_data):
+   - policy_data.csv
+   - death_data.csv
+   - DE_Mobility_Report.csv
+- [paper](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/paper)
 - [sandbox](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/sandbox):
    - covid_stringency_index_visualisations.ipynb
-- [paper](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/paper)
-- [documentation](https://github.com/s6emschw/EPP-Final-Project/tree/master/src/documentation)
 
 The **bld** directory which is generated after running Pytask has the subdirectories:
-- data: contains `covid_policy.csv`,`df_visuals.csv`
 - analysis: contains `stringency_index_data.csv`
-- figures: contains visualizations 
+- data: contains `covid_policy.csv`,`df_visuals.csv`
 - documentation: 
+- figures: contains visualizations 
+- paper:
