@@ -23,8 +23,8 @@ $ pytask
 ```
 
 ## Main tasks
-1. Clean and manage the Covid-19 restriction policy data
-> **Dependency:** policy_data.csv **Product:** covid_policy.csv
+1. Clean and manage the Covid-19 restriction policy data <br />
+**Dependency:** `policy_data.csv` **Product:** `covid_policy.csv`
 
 ## Project paths
 hello
