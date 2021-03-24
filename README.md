@@ -30,7 +30,8 @@ $ pytask
 3. Prepare data for visualizations <br />
 **Dependency:** `stringency_index_data.csv`,`death_data.csv`,`DE_Mobility_Report.csv` **Product:** `df_visuals.csv`
 4. Create visualizations <br />
-5. Create detailed documentation on data collection and index creation <br />
+**Dependency:** `df_visuals.csv` **Product:** 13 images in .png format
+6. Create detailed documentation on data collection and index creation <br />
 
 ## Project paths
 The [**src**](https://github.com/s6emschw/EPP-Final-Project/tree/master/src) directory has the subdirectories:
@@ -56,5 +57,5 @@ The [**src**](https://github.com/s6emschw/EPP-Final-Project/tree/master/src) dir
 The **bld** directory which is generated after running Pytask has the subdirectories:
 - data: contains `covid_policy.csv`,`df_visuals.csv`
 - analysis: contains `stringency_index_data.csv`
-- figures: contains 13 images of plots 
+- figures: contains visualizations 
 - documentation: 
