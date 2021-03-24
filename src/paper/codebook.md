@@ -55,7 +55,7 @@ All the 9 indicators are recorded on an ordinal scale according to the level of 
 ---
 ### Calculating Indicies
 
-First we calculate the *Sub Score Index for each of the 9 indicators*. Then we calculate Sub Score Index for the broader categories and the aggregate Stringency Index.
+First we calculate the Sub Score Index for each of the 9 indicators. Then we calculate Sub Score Index for the broader categories and the aggregate Stringency Index.
 
 | Indicator | Max. value | Flag |
 | :---: | :---: | :---: |
@@ -81,7 +81,7 @@ where,
 - _v<sub>j,t</sub>_ is the policy value on the ordinal scale
 - _f<sub>j,t</sub>_ is the recorded flag value of the indicator
 
-A simple average of indicators under each of the catergories would give *Sub Score Index for the respective category* and an average of all the indicators would give the **Stringency Index**. 
+A simple average of indicators under each of the catergories would give Sub Score Index for the respective category and an average of all the indicators would give the **Stringency Index**. 
 
 | Index name | _k_ | E1 | E2 | E3 | E4 | S1 | S2 | S3 | S4 | R1 |
 | :---: | :---: | :---: | :---: | :---: | :---: |:---: | :---: | :---: | :---: | :---: |
