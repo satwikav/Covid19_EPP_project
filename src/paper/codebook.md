@@ -30,16 +30,16 @@ All the 9 indicators are recorded on an ordinal scale according to the level of 
 
 | ID | Name | Description | Measurement | Coding |
 | --- | --- | --- | --- | --- |
-| S1 | `SI_S1` | Record restrictions on stores | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions)<br/>2 - closed<br/>-100 - no data |
+| S1 | `SI_S1` | Record restrictions on stores | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions)<br/>2 - partially closed (>=800m2<br/>3 - closed<br/>-100 - no data |
 | | `flag_S1` | | Binary flag for geographic scope | 0 - targeted<br/>1 - general<br/>-100 - no data |
 | | `recorded_flag_E1` | | Binary flag for policy implementation | 0 - state level<br/>1 - national level<br/>-100 - no data |
-| S2 | `SI_S2` | Record restrictions on restaurants  | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions) <br/>2 - partially open<br/>3 - closed<br/>-100 - no data |
+| S2 | `SI_S2` | Record restrictions on restaurants  | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions) <br/>2 - partially closed (takeaways allowed)<br/>3 - closed<br/>-100 - no data |
 | | `flag_S2` | | Binary flag for geographic scope | 0 - targeted<br/>1 - general<br/>-100 - no data |
 | | `recorded_flag_S2` | | Binary flag for policy implementation| 0 - state level<br/>1 - national level<br/>-100 - no data |
-| S3 | `SI_S3` | Record restrictions on entertainment, sports facitlites and cultural institutions | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions)<br/>2 - partially open<br/>3 - closed<br/>-100:no data |
+| S3 | `SI_S3` | Record restrictions on entertainment, sports facitlites and cultural institutions | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions)<br/>2 - closed<br/>-100:no data |
 | | `flag_S3` | | Binary flag for geographic scope | 0 - targeted<br/>1 - general<br/>-100 - no data |
 | | `recorded_flag_S3` | | Binary flag for policy implementation | 0 - state level<br/>1 - national level<br/>-100 - no data |
-| S4 | `SI_S4` | Record Restrictions on religious events | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions)<br/>2 - partially open<br/>3 - closed<br/>-100 - no data |
+| S4 | `SI_S4` | Record Restrictions on religious events | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions)<br/>2 - closed<br/>-100 - no data |
 | | `flag_S4` | | Binary flag for geographic scope | 0 - targeted<br/>1 - general<br/>-100 - no data |
 | | `recorded_flag_S4` | | Binary flag for policy implementation | 0 - state level<br/>1 - national level<br/>-100 - no data |
 
@@ -48,6 +48,6 @@ All the 9 indicators are recorded on an ordinal scale according to the level of 
 
 | ID | Name | Description | Measurement | Coding |
 | --- | --- | --- | --- | --- |
-| R1 | `R_index_score` | Record contact restrictions | Ordinal scale | 0 - no measures<br/>1 - fully open (under certain hygenic and social distancing conditions)<br/>2 - closed<br/>-100 - no data |
+| R1 | `R_index_score` | Record contact restrictions | Ordinal scale | 0 - no measures<br/>1 - contact reduced to <= 1000<br/>2 - contact reduced to <= 10 or 2 HH<br/>3 - contact reduced to 2 HH<br/>4 - contact reduced to gatherings of individuals from two hhs (total number of individuals may not exceed 10 individuals)<br/>5 - contact reduced to gatherings of individuals from two hhs (total number of individuals may not exceed 5 individuals)<br/>6 - contact reduced to <=4<br/>7 - contact limited to the members of one's HH and maximum of one individual from a different HH<br/>8 - contact reduced to the members of one's hh or maximum one individual from a different HH<br/>-100 - no data |
 | | `flag_R1` | | Binary flag for geographic scope | 0 - targeted<br/>1 - general<br/>-100 - no data |
 | | `recorded_flag_R1` | | Binary flag for policy implementation | 0 - state level<br/>1 - national level<br/>-100 - no data |
