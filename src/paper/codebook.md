@@ -83,7 +83,7 @@ where,
 
 A simple average of indicators under each of the catergories would give Sub Score Index for the respective category and an average of all the indicators would give the **Stringency Index**. 
 
-| Index name | _k_ | E1 | E2 | E3 | E4 | S1 | S2 | S3 | S4 | R1 |
+| Index name | _k_ | `SI_E1` | `SI_E2` | `SI_E3` | `SI_E4` | `SI_S1` | `SI_S2` | `SI_S3` | `SI_S4` | `R_Index_Score` |
 | :---: | :---: | :---: | :---: | :---: | :---: |:---: | :---: | :---: | :---: | :---: |
 | `E_Index_Score` | 4 | `x` | `x` | `x` | `x` | |  |  |  |  |
 | `S_Index_Score` | 4 |  |  |  |  | `x` | `x` | `x` | `x` | |
