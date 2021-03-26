@@ -11,7 +11,7 @@ For our final project, we collaborated with members of the research team to crea
 </p>
 
 ## Viewing the project
-The project is structured such that all the input files are located in the [src](https://github.com/s6emschw/Covid-19-Visualizations/tree/master/src) directory and all the output files are in the bld directory, which is generated in the project's root directory after running Pytask. Hence the best way to view this project is to clone it.
+The project is structured such that all the input files are located in the [src](https://github.com/satwikav/Covid19_EPP_project/tree/master/src) directory and all the output files are in the bld directory, which is generated in the project's root directory after running Pytask. Hence the best way to view this project is to clone it.
 ```
 $ git clone https://github.com/satwikav/Covid19_EPP_project.git
 ```
