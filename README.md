@@ -65,7 +65,6 @@ The **bld** directory, which is generated after running Pytask, has the followin
    - `stringency_index_data.csv`
 - data:
    - `covid_policy.csv`,`df_visuals.csv`
-- documentation
 - figures: contains visualizations
 - paper:
    - `research_paper.pdf`
