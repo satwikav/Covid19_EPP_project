@@ -27,7 +27,9 @@ def task_compile_documents():
 
 @pytask.mark.parametrize(
     "depends_on, produces",
-    [(BLD / "paper" / "research_paper.pdf", ROOT / "research_paper.pdf")],
+    [
+        (BLD / "paper" / "research_paper.pdf", ROOT / "research_paper.pdf"),
+    ],
 )
 def task_copy_to_root(depends_on, produces):
     shutil.copy(depends_on, produces)
