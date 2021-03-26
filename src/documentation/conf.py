@@ -45,8 +45,8 @@ source_encoding = "utf-8"
 master_doc = "index"
 
 # General information about the project.
-project = "Visualizating Covid-19 Contact Restriction Policies in Germany"
-copyright = "2019-, Emily Anne Schwab, Satwika Vysetty "
+project = "Visualisations on Covid-19 Contact Restriction Policies"
+copyright = "2019-, Emily Anne Schwab, Satwika Vysetty"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -192,8 +192,9 @@ latex_documents = [
     (
         "index",
         "project_documentation.tex",
-        """Documentation of the Visualizating Covid-19 Contact Restriction Policies in Germany project""",
-        "Emily Anne Schwab, Satwika Vysetty ",
+        """Documentation of the Visualisations on Covid-19 Contact Restriction
+        Policies project""",
+        "Emily Anne Schwab, Satwika Vysetty",
         "manual",
     )
 ]
