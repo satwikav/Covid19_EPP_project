@@ -1,18 +1,19 @@
-## EPP Final Project (WiSe 2020/21): <br /> <br /> Visualizing the Stringency of Covid-19 Contact Restriction Policies in Germany
-**Emily Anne Schwab and Satwika Vysetty**
+## EPP Final Project (WiSe 2020/21) <br /> <br /> Visualizing the Stringency of Covid-19 Contact Restriction Policies in Germany
+**[Emily Anne Schwab](https://github.com/s6emschw) and Satwika Vysetty**
 
-This repository contains the final project submitted for the course Effective Programming Practices for Economists (EPP) taught by Professor Hans-Martin von Gaudecker at the University of Bonn. We have used the [template](https://econ-project-templates.readthedocs.io/en/stable/index.html) provided by Professor Gaudecker for structuring our project. For convenient access to our [final report](https://github.com/s6emschw/Covid-19-Visualizations/blob/master/research_paper.pdf) and [codebook](https://github.com/s6emschw/Covid-19-Visualizations/blob/master/codebook.md) documentation, we have included both files in the [main](https://github.com/s6emschw/Covid-19-Visualizations) directory. A concise view of our project and interactive visualizations can be found in this [Jupyter notebook](https://github.com/s6emschw/Covid-19-Visualizations/blob/master/src/sandbox/covid_stringency_index_visualisations.ipynb). The paths to other important files can be found [here](#project-paths).
+This repository contains the final project submitted for the course Effective Programming Practices for Economists (EPP) taught by Professor Hans-Martin von Gaudecker at the University of Bonn. We have used the [template](https://econ-project-templates.readthedocs.io/en/stable/index.html) provided by Professor Gaudecker for structuring our project. For convenient access to our [final report](https://github.com/satwikav/Covid19_EPP_project/blob/master/research_paper.pdf) and [codebook](https://github.com/satwikav/Covid19_EPP_project/blob/master/codebook.md) documentation, we have included both files in the [main](https://github.com/satwikav/Covid19_EPP_project) directory. A concise view of our project and interactive visualizations can be found in this [Jupyter notebook](https://github.com/satwikav/Covid19_EPP_project/blob/master/src/sandbox/covid_stringency_index_visualisations.ipynb). The paths to other important files can be found [here](#project-paths).
 
 ## Introduction
 <p align="justify">
-As a result of the Covid-19 pandemic, governments around the world implemented an array of policy measures to alleviate the enormous strains placed on their country’s healthcare systems and to mitigate the pandemic’s economic consequences for businesses and households alike. Since shortcomings in modern epidemiological models make it difficult to study the potential effects of these policies imposed during the Covid-19 health crisis, researchers at the Bonn Graduate School of Economics (BGSE) and the Institute of Labor Economics (IZA) developed a unique simulation model using agent-based theory to study the social and economic costs of such dynamic policy measures. By understanding the spread of Covid-19 through social contacts as well as the impact of various social distancing policies on reducing the infection and death rates associated with the virus, the research team’s work can assist governments in determining which policy measures are most effective in minimizing negative social and economic outcomes of the pandemic. <br />
+As a result of the Covid-19 pandemic, governments around the world implemented an array of policy measures to alleviate the enormous strains placed on their country’s healthcare systems and to mitigate the pandemic’s economic consequences for businesses and households alike. Since shortcomings in modern epidemiological models make it difficult to study the potential effects of these policies imposed during the Covid-19 health crisis, researchers at the Bonn Graduate School of Economics (BGSE) and the Institute of Labor Economics (IZA) developed a unique simulation model using agent-based theory to study the social and economic costs of such dynamic policy measures. By understanding the spread of Covid-19 through social contacts as well as the impact of various social distancing policies on reducing the infection and death rates associated with the virus, the research team’s work can assist governments in determining which policy measures are most effective in minimizing negative social and economic outcomes of the pandemic.
+   
 For our final project, we collaborated with members of the research team to create a data set tracking the stringency level of social distancing policies recommended by the German federal government. The data entries for the policy measures begin approximately a month and a half before the start of the first lockdown period, on February 1, 2020 and end a year later on February 14, 2021. In order to capture the stringency level of contact restriction measures that affect various forms of daily social encounters, our data set differentiates between policies that target the education system, private gathering, and public activities such as shopping and entertainment. Upon completing our data set and producing an individual stringency index for each social contact category as well as an aggregate stringency index, we employed mobility data from the Google Covid-19 Community Mobility Reports to produce visualizations that reveal the effects of Germany’s Covid-19 lockdown policies to daily forms of social contact.
 </p>
 
 ## Viewing the project
 The project is structured such that all the input files are located in the [src](https://github.com/s6emschw/Covid-19-Visualizations/tree/master/src) directory and all the output files are in the bld directory, which is generated in the project's root directory after running Pytask. Hence the best way to view this project is to clone it.
 ```
-$ git clone https://github.com/s6emschw/Covid-19-Visualizations.git
+$ git clone https://github.com/satwikav/Covid19_EPP_project.git
 ```
 After cloning the project repository in the desired location, the environment needed for running this project has to be created.
 ```
@@ -38,26 +39,26 @@ $ pytask
 6. Create detailed documentation on data collection, computation of indices, and analysis of generated visualizations
 
 ## Project paths
-The [**src**](https://github.com/s6emschw/Covid-19-Visualizations/tree/master/src) directory contains the following subdirectories:
-- [analysis](https://github.com/s6emschw/Covid-19-Visualizations/tree/master/src/analysis):
+The [**src**](https://github.com/satwikav/Covid19_EPP_project/tree/master/src) directory contains the following subdirectories:
+- [analysis](https://github.com/satwikav/Covid19_EPP_project/tree/master/src/analysis):
    - `task_create_index.py`
-- [data_management](https://github.com/s6emschw/Covid-19-Visualizations/tree/master/src/data_management):
+- [data_management](https://github.com/satwikav/Covid19_EPP_project/tree/master/src/data_management):
    - `task_create_data.py`
    - `task_prepare_data_for_plotting.py`
-- [documentation](https://github.com/s6emschw/Covid-19-Visualizations/tree/master/src/documentation)
-- [final](https://github.com/s6emschw/Covid-19-Visualizations/tree/master/src/final):
+- [documentation](https://github.com/satwikav/Covid19_EPP_project/tree/master/src/documentation)
+- [final](https://github.com/satwikav/Covid19_EPP_project/tree/master/src/final):
    - `task_create_visual_SI_Covid.py`
    - `task_create_visual_SI_Mobility.py`
    - `task_create_visual_SSI_time.py`
    - `task_create_visuals.py`
-- [original_data](https://github.com/s6emschw/Covid-19-Visualizations/tree/master/src/original_data):
+- [original_data](https://github.com/satwikav/Covid19_EPP_project/tree/master/src/original_data):
    - `policy_data.csv`
    - `death_data.csv`
    - `DE_Mobility_Report.csv`
-- [paper](https://github.com/s6emschw/Covid-19-Visualizations/tree/master/src/paper):
+- [paper](https://github.com/satwikav/Covid19_EPP_project/tree/master/src/paper):
    - `research_paper.tex`
    - `task_paper.py`
-- [sandbox](https://github.com/s6emschw/Covid-19-Visualizations/tree/master/src/sandbox):
+- [sandbox](https://github.com/satwikav/Covid19_EPP_project/tree/master/src/sandbox):
    - `covid_stringency_index_visualisations.ipynb`
 
 The **bld** directory, which is generated after running Pytask, has the following subdirectories:
