@@ -1,10 +1,10 @@
-.. This the Visualisations on Covid-19 Contact Restriction Policies project's documentation master file.
+.. This the Visualizating Covid-19 Contact Restriction Policies in Germany project's documentation master file.
 
 .. You can adapt this file completely to your liking,
 .. but it should at least contain the `toctree` directive.
 
 
-Welcome to the Visualisations on Covid-19 Contact Restriction Policies project's documentation!
+Welcome to the Visualizating Covid-19 Contact Restriction Policies in Germany project's documentation!
 ================================================================================================
 
 .. toctree::

@@ -6,11 +6,11 @@ This repository contains the final project submitted for the course Effective Pr
 ## Introduction
 <p align="justify">
 As a result of the Covid-19 pandemic, governments around the world implemented an array of policy measures to alleviate the enormous strains placed on their country’s healthcare systems and to mitigate the pandemic’s economic consequences for businesses and households alike. Since shortcomings in modern epidemiological models make it difficult to study the potential effects of these policies imposed during the Covid-19 health crisis, researchers at the Bonn Graduate School of Economics (BGSE) and the Institute of Labor Economics (IZA) developed a unique simulation model using agent-based theory to study the social and economic costs of such dynamic policy measures. By understanding the spread of Covid-19 through social contacts as well as the impact of various social distancing policies on reducing the infection and death rates associated with the virus, the research team’s work can assist governments in determining which policy measures are most effective in minimizing negative social and economic outcomes of the pandemic. <br />
-For our final project, we collaborated with members of the research team to create a data set tracking the stringency level of social distancing policies recommended by the German federal government. The data entries for the policy measures begin approximately a month before the start of the first lockdown period, on February 15, 2020 and end a year later on February 14, 2021. In order to capture the stringency level of contact restriction measures that affect various forms of daily social encounters, our data set differentiates between policies that target the education system, private gathering, and public activities such as shopping and entertainment. Upon completing our data set and producing an individual stringency index for each social contact category as well as an aggregate stringency index, we employed mobility data from the Google Covid-19 Community Mobility Reports to produce visualizations that reveal the effects of Germany’s Covid-19 lockdown policies to daily forms of social contact. 
+For our final project, we collaborated with members of the research team to create a data set tracking the stringency level of social distancing policies recommended by the German federal government. The data entries for the policy measures begin approximately a month and a half before the start of the first lockdown period, on February 1, 2020 and end a year later on February 14, 2021. In order to capture the stringency level of contact restriction measures that affect various forms of daily social encounters, our data set differentiates between policies that target the education system, private gathering, and public activities such as shopping and entertainment. Upon completing our data set and producing an individual stringency index for each social contact category as well as an aggregate stringency index, we employed mobility data from the Google Covid-19 Community Mobility Reports to produce visualizations that reveal the effects of Germany’s Covid-19 lockdown policies to daily forms of social contact.
 </p>
 
 ## Viewing the project
-The project is structured such that all the input files are located in the [src](https://github.com/s6emschw/EPP-Final-Project/tree/master/src) directory and all the output files are in the bld directory, which is generated in the project's root directory after running Pytask. Hence the best way to view this project is to clone it. 
+The project is structured such that all the input files are located in the [src](https://github.com/s6emschw/EPP-Final-Project/tree/master/src) directory and all the output files are in the bld directory, which is generated in the project's root directory after running Pytask. Hence the best way to view this project is to clone it.
 ```
 $ git clone https://github.com/s6emschw/EPP-Final-Project.git
 ```
@@ -26,7 +26,7 @@ $ pytask
 ```
 
 ## Main tasks
-1. Collection of Covid-19 restriction policy data 
+1. Collection of Covid-19 restriction policy data
 2. Clean and manage the Covid-19 restriction policy data <br />
 **Dependency:** `policy_data.csv` **Product:** `covid_policy.csv`
 3. Create Sub-Score Indicies and Stringency Index <br />
@@ -63,11 +63,11 @@ The [**src**](https://github.com/s6emschw/EPP-Final-Project/tree/master/src) dir
 The **bld** directory, which is generated after running Pytask, has the following subdirectories:
 - analysis:
    - `stringency_index_data.csv`
-- data: 
+- data:
    - `covid_policy.csv`,`df_visuals.csv`
-- documentation 
-- figures: contains visualizations 
-- paper: 
+- documentation
+- figures: contains visualizations
+- paper:
    - `research_paper.pdf`
 ---
  <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
